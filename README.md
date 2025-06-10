@@ -120,7 +120,9 @@ This project is configured for automatic deployment on Netlify:
 2. **Build Settings**:
    - Build command: `npm run build`
    - Publish directory: `dist`
-3. **Environment Variables**: Set production environment variables in Netlify dashboard
+3. **Environment Variables**: Set production environment variables in Netlify dashboard:
+   - `VITE_API_URL=https://taskms.greenhacker.tech/api`
+   - `VITE_GOOGLE_CLIENT_ID=your_google_client_id`
 4. **Deploy**: Automatic deployment on every push to main branch
 
 ### Docker Deployment
@@ -145,12 +147,13 @@ docker run -p 80:80 task-manager-frontend
 | `VITE_GOOGLE_CLIENT_ID` | Google OAuth Client ID | - |
 | `VITE_DEBUG_MODE` | Enable debug mode | `false` |
 
-**Note**: For production deployment, create a `.env.production` file with your production values. This file should never be committed to version control.
+**Note**: For production deployment, set environment variables in your deployment platform (Netlify, Vercel, etc.). Never commit production credentials to version control.
 
 ### Backend Integration
 
 This frontend is designed to work with the Task Manager Backend API. Make sure the backend is running and accessible at the URL specified in `VITE_API_URL`.
 
+**Backend API**: [https://taskms.greenhacker.tech/api](https://taskms.greenhacker.tech/api)
 **Backend Repository**: [https://github.com/GreenHacker420/task-manager-server](https://github.com/GreenHacker420/task-manager-server)
 
 ## 🤝 Contributing
