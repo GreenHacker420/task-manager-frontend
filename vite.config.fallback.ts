@@ -1,6 +1,10 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import path from "path";
+
+// Fallback configuration using regular React plugin instead of SWC
+// Use this if SWC causes build issues in deployment environments
+// To use: rename this file to vite.config.ts and rename the current vite.config.ts to vite.config.swc.ts
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({

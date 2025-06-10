@@ -1,10 +1,13 @@
 [build]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_VERSION = "9"
+  # Ensure native dependencies are built for the correct architecture
+  npm_config_target_arch = "x64"
+  npm_config_target_platform = "linux"
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
@@ -20,4 +23,4 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://taskms.greenhacker.tech; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://accounts.google.com https://*.googleusercontent.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://accounts.google.com;"
+    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://task-manager-production-44b4.up.railway.app; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://accounts.google.com https://*.googleusercontent.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://accounts.google.com;"
