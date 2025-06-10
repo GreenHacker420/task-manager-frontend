@@ -145,6 +145,8 @@ docker run -p 80:80 task-manager-frontend
 | `VITE_GOOGLE_CLIENT_ID` | Google OAuth Client ID | - |
 | `VITE_DEBUG_MODE` | Enable debug mode | `false` |
 
+**Note**: For production deployment, create a `.env.production` file with your production values. This file should never be committed to version control.
+
 ### Backend Integration
 
 This frontend is designed to work with the Task Manager Backend API. Make sure the backend is running and accessible at the URL specified in `VITE_API_URL`.
